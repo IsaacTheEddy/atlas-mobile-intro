@@ -16,12 +16,9 @@ export default function Index() {
           refreshing={false}
           renderItem={({ item }) => <SwipeableActivity activity={item} />}
           data={activities}
-          estimatedItemSize={20}
+          estimatedItemSize={100}
           onRefresh={() => {
             Alert.alert("Refresh");
-          }}
-          onEndReached={() => {
-            Alert.alert("End Reached");
           }}
         ></FlashList>
       </View>

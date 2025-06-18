@@ -8,7 +8,15 @@ interface Activity {
 }
 
 export function Activity({ activity }: { activity: Activity }) {
-  return <View style={styles.container}></View>;
+  return (
+    <View style={styles.container}>
+      <Text>
+        {new Date(activity.date).toLocaleDateString()},{" "}
+        {new Date(activity.date).toLocaleTimeString()}
+      </Text>
+      <Text>{activity.steps} steps on</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
