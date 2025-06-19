@@ -2,15 +2,13 @@ import { useActivitiesContext } from "@/components/ActivitiesProvider";
 import { Link } from "expo-router";
 import { Alert, Pressable, Text, View, StyleSheet } from "react-native";
 import { FlashList } from "@shopify/flash-list";
+import { Activity } from "@/components/Activity";
 import { SwipeableActivity } from "@/components/SwipeableActivity";
 
 export default function Index() {
   const { activities, deleteActivities } = useActivitiesContext();
   return (
     <View style={styles.container}>
-      {/* {activities.map((activity) => (
-        <Activity activity={activity} key={activity.id}></Activity>
-      ))} */}
       <View style={styles.list}>
         <FlashList
           refreshing={false}
@@ -20,7 +18,7 @@ export default function Index() {
           onRefresh={() => {
             Alert.alert("Refresh");
           }}
-        ></FlashList>
+        />
       </View>
 
       <Link style={styles.links} href={"./add-activity-screen"} replace>
@@ -40,16 +38,18 @@ export default function Index() {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 50,
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
     height: "100%",
+    backgroundColor: "#FEF9E6",
   },
   links: {
     flex: 0,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "gray",
+    backgroundColor: "#1ED2AF",
     width: "100%",
     padding: 16,
     textAlign: "center",

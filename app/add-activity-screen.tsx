@@ -8,12 +8,15 @@ export default function activityScreen() {
   const { insertActivity } = useActivitiesContext();
   return (
     <View style={styles.container}>
-      <Text>Activity Screen</Text>
-      <TextInput
-        placeholder="Enter steps"
-        keyboardType="number-pad"
-        onChangeText={(value) => setSteps(parseInt(value))}
-      />
+      <Text style={styles.actText}>Add Activity</Text>
+      <View style={styles.inputBox}>
+        <TextInput
+          placeholder="Enter steps"
+          keyboardType="number-pad"
+          onChangeText={(value) => setSteps(parseInt(value))}
+        />
+      </View>
+
       <Pressable
         style={styles.addAct}
         onPress={() => {
@@ -36,6 +39,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#FEF9E6",
   },
   buttons: {
     flex: 0,
@@ -50,13 +54,24 @@ const styles = StyleSheet.create({
     flex: 0,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "green",
+    backgroundColor: "#1ED2AF",
     width: "100%",
     padding: 16,
-    marginBottom: 10,
     textAlign: "center",
   },
   text: {
     color: "white",
+  },
+  actText: {
+    color: "black",
+    fontSize: 25,
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
+  inputBox: {
+    borderWidth: 2,
+    width: "100%",
+    marginBottom: 10,
+    backgroundColor: "white",
   },
 });
