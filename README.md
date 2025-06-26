@@ -20,6 +20,6 @@
     npx expo start
    ```
 
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with ExpoAdd commentMore actions
+## [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with ExpoAdd commentMore actions
 Add comment
 
